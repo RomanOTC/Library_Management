@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>View Books</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=sh6BSQihlK7QMOHuBgunoKv0D2NsZeNZ-ILizw69l-5a3Jnvix9nPkh6vcZbpxZpgEDDCZF7zS4HqLn42kc75S_ZPRtejw7xyqmqKwxoKITYp0E_KOYXHcmsGVKQG2VvEFd9ppaiSwh84B-7O9ZKoTYMkRtvb88lJhx2LLyd_8lDmsmzHhmeLiuRZb3gzuKTmn_yaU8DTVZS4n-fs8V2FtyHz6evqtpDYhrbwf20FuMy7TVf5KRXDdrQz3YD9i39sblBLQFkzB3O_4K4n_L120bFPxwAxfOXIoHvBfOPw2HnAbq2JHaTfPbfRHRx2KCXs_gEVu-l_dy63KepOTJFW62doAMz2q5W-2B2YZmM4XTe6TulUMOrnNYS5jLW3n93er6j7C8p3sgXuAKN63QqFYRndp44jdnRpEVUGrQhbdcJ2Q69AzbFo8OCh70rJqWDRKYtogQV4oigz_GqI7sG8FNQGV4yaYdeQ5tf4YiFn42Y26EbpM6Hhb3_qtB6OaGIczg9BOM2-eW_YWTBgbtlfZumNesd_O9KskNnS1Vrd2TQ21oVCn3AvHcScWq4JLX3-qkc3jsTkAbqgiwS2XIz45iL8XiMFfqlLcGA5gsA8Tk7_Nq1Z6BryqOqb0L_FzKomwWKS1lFXgYeINmd-y3SP_XDS6FJ27MiEsk91aU_kyDJvjf7fjuAJvoxIk1lY1p0N7ygOi2Cd7yKAJHkve5HtEK3-wZ4_xW-3C916Cr2JrDKTMn4VFbhAajheTgoj27uOKG4pSmyvV1CJz1wkGf_s64FnFZjziEKRH4deA5vsRVcwPw1D_sBWV7WLujUPWgnER_IJld2xPcEDiyjYYQKXA2UcTl5ongP5EHdklP30WmfZjL2LA13oa9Oq4zo7oUKyWWppkwdO8UR469dy6YgOIppAA1dzrfZyPlRrataSU29KR6jSHslos_qWQN2iuxDgjCdHXUp14YvpAtJrjLzMuZs4fctuusgNZM01eRya4W8HAQ0zIeDFOhR6dTI8nx7eFaTuT_vd1jsa5r_RcCyevm5NjM2DmCCMfZGQRikyH1yG_nBvtO9J2y7wknioqJN1FgsNZPLxtfmW3mP0dLxZnX67wzrpy5QPyWNZX8pxShDFxK7vs7pxbMJrN1Miy_RAOjLbNy1yh9oCERsBuvpcijTnSBQgxfMOPpr4P-d_Jg60BdhObGM6bY9OlutumXygxxGTvSZhawCE3jpKqLb-6i1HjU1zsopfBEIsajimTKEa9vOZ5XvutHVSJo0GMd_G2VIgPN8Lwq_vWgXk1D8yb5Udwhx0PUpI5QJmMspY9mVBBPDb4IDOhmylSzOYF1NnPEv4NteRnHgQb8TGZ618xb1zvd0dh9JTEObeYkkMbXoT8e9UEz1im5j5CA3rfjHgbvxmBrU0oqnOjJjOsDpYtAYT-BvDcgiMROuvbtbPRF8yOudCPPUWMJ7oSXdW4mJ8d5Ry48M2nfr9YENkM6WqLAdlmcsDPIhwcHqKbK6A_sEwkQKG49p-bCDWGt8F0_HAznvxzmMK5y0TgnNW4YRuldOpLR_GvHM-9YLZy2O1ctCXT_GxEN6NvrSy9Ypkb1BFfzn-2EAg95WZeSgDfQhwvtRdbCwXrxTiKfXBHt7_LA5TRgpByxOMyDsNsou_W2l" nonce="cfa509522ea4dd8d6370eec308ee2586" charset="UTF-8"></script></head>
+<body>
+    <nav>
+        <h1>Library Management</h1>
+        <ul>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('view_books') }}">View Books</a></li>
+            <li><a href="{{ url_for('search_book') }}">Search Book</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>All Books</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Publication Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.publication_year }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_book', book_id=book._id) }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

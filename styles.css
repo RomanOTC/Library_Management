@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffcccc; /* Light red background */
+    color: #343a40; /* Dark grey text color */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    margin-bottom: 20px;
+    background-color: #c0392b; /* Dark red for the navigation */
+    padding: 10px;
+    text-align: center;
+}
+
+nav h1 {
+    color: white;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: white; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    color: #c0392b; /* Dark red for headings */
+}
+
+h3 {
+    color: #c0392b; /* Dark red for subheadings */
+}
+
+.form-label {
+    display: block;
+    margin: 10px 0 5px; /* Space above the label */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+input[type="submit"] {
+    background-color: #c0392b; /* Dark red button */
+    color: white; /* White text for button */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #a93226; /* Darker red on hover */
+}
+
+.table {
+    width: 100%; /* Full width for tables */
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 10px; /* Padding in cells */
+    text-align: left; /* Left-align text */
+}
+
+.table th {
+    background-color: #f2f2f2; /* Light grey background for header */
+}
+
+.table tr:hover {
+    background-color: #f5f5f5; /* Highlight row on hover */
+}

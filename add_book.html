@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add Book</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=ZTiqhCxEE9VwnSeU9clzahbvwwF6s4OXfBidH-zMerSpQL9Ol2XXBIRxj6GNBB8rfvorwghEhuUZtFu9CED4B_QXZfBXJkW6Q4HBX2-RhkpJUMpafzBrp6Q9TBhcNbCt1AjMGC4l1vAAdVKM3J1jgaxqTe1Uxf1hgI0QWnOOSji_iHKnNDMOo0ogumhgJKqMXdXIk_27KWA8Js2_kyDrYJe0LPTBR8lO8n9lUf-WrZoZyxMT36GsE3iBqGz-dLSRJT2d8MBZRBMr8mWtk0pnEjxvSvfttYj6nKBfxLiww8vNPnsL4xeUvcl_v4xYFZd96mUSjU9cSfP6cga1QWRVqxgw4dRLn0C4xOVBPltfHi8olgJRglwQewFn4d6QvjseVi2r9HPm8GfJLTWChC297SG0OfTgkP5GqDhLx7SBbTNC1Qua-x9zoaN16oVnppwg85qEpZtWHiaqv4zgmNh0DUw3dn6c7buw5mwjnttuKJUuAlBrXOMD_j9tpt5SppRVqh6lN_bO4o6sp8x8hc6orDI3MNCy3fLePqs5zPt_IN39akCvtCO8irIJ4dfwzUO59t5GEGqOElVVNYrOwEe8nB2WpfBqNnGizkK6rBKaGGpTd2H8KrjL7mlFJ7rc5ymTcLKCD7nPD3bUUsu4tSpJRgkR5-06Ly5eHboPfplu_3zaGJVqUm2h5a7FgSeFSXrySgteIVnEfNwTeUi48FTTkx-K2sk5zVeSMNklNxDC1P8xaVEi9I5pmkmQmnDrnjZnplXYis0p1N-5Vxrz6l0ecVJ0P5ZD6YkGmGvLLtyzID9ns1WToqnxhFfO6_3ZY8uRcwfEuRJbXOpKzhjfrSCZAGjIM2pvgnutDjJ-2o_g5ujfz0umM3zqmcR6avNKiUBkfrDZu_UGZGBH7xKaCxm0K5Qs-FlrK-5vHaaDXumj2i96yR8kgcjP5LcJVvcuX6Y-vhUN7z6cmjxNn8_gZzbppFkhhRVZu-WH8zMS33qj5a5B1wAYSkXcKmOvjZsZ0F68OS0DX9pE8sad0Ms6ALN9xtq4Ss_2c_b7mi8dIXNf4K1Poo4oYiBV1TSbzNX_MvR21FM_PQ6RclJ4bNb-Y-AvluRvYtGxybSd-wZR28qwQHzUhtQRMxAtxU0uVfrEaBvGy4_DF37yCdGjHMp4WX99gL_ZBpTNvm4Ln9spDkEfqTQ1-JgibNcT1lSYmVhMVjtO9DVPvccDPsuMbJnMHu4PzO7e8QcRNW19gUPYtJUkyME4NbISK-eDuIRXQa1xainBOXKnhVKzh8h5oiyw4LsjzjmzKRepd0hfK3NanswWMicuzaEh5nkJIneKdEexy-iKHkW5T_np1B00-NdJwKrpr2PHZZbxM9zKjdXlLvla5y5C1xWxjpW3iAj8W43ksAY7ROfHGI3c47WD5hrTVb-LS6I7XJmLta5eQEiNYWjuoNjzgP9MKGu_OMzGEnFTg7skGBEWdxmSJF8VV5H2q3ktwlAzFawnvqyP9tmdb9lbFzAROK5axwCAr2vUAtsmQVlMRvT2CUPKmY0v9WvOP0l_0nsLCJA9a6lOwJV5q_5J_Ud5YeEFGqiiCZnitxdq8tFnG0tsl583FGT8f2Jva1_uCSwMIi3SkId6hSxKtxGOxEStFEPVVlRGSGJLF1-I0ILb" nonce="826e97a63b5abcaa4493d91260fa2223" charset="UTF-8"></script></head>
+<body>
+    <nav>
+        <h1>Library Management</h1>
+        <ul>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('view_books') }}">View Books</a></li>
+            <li><a href="{{ url_for('search_book') }}">Search Book</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Add a New Book</h2>
+        <form method="POST">
+            <label class="form-label">Title:</label>
+            <input type="text" name="title" required>
+            <label class="form-label">Author:</label>
+            <input type="text" name="author" required>
+            <label class="form-label">Genre:</label>
+            <input type="text" name="genre" required>
+            <label class="form-label">Publication Year:</label>
+            <input type="number" name="publication_year" required>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+</body>
+</html>

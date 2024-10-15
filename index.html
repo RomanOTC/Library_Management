@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Library Management System</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=hOdE-faYsn1iaX-_zUeWRnxx0NgCK-r6sw8_G4xGNyMtCAVYtskQE1D3y8CPVS2YGHV3vWfmcw-HwnC653NR6z4pgAOQ9g4cC6tiM4fhnDvW7cynCXErPzj5sLU_JHpXNhrH29wa7PkIHM9cACwDuI5kf840TH8Vau_ACzIdAj--3vyWhy6fYvfDFIUEPIjp_3FB2j131FzVnpEB7-WSDQZDV-bzF_0O6vGQfrlCRT_2m2lSZooNDWyqWIJNXkXfdkNSlBXwIuICjJEtC41il0-J8zFno8y8FYoQT7tBS2t-f3-xMPofNTNrPpTLfqBw1VXWcfqJTOutYma6SNZKPEr6Y57uJ8GrDg7bC9_tayMq2SrVxumdxqO8tEsXNf3zLKGR6nnBXgWB6Vuns1M9tvZUWZcZGUI1IEtpRLNEbGF6EbgBZUYWqIWJaTUJhzGqv9Pt3LepQ6CEAnIiU0lx7qJriy2EcSYOV3T-1d-O6TWUzwWQOxTui-cvxdyrQEM3joWntwtj2iedUvt8kw7d6_ctkqV7gEJk4thy6MH8yPoolzdAKxyvdZLe0A2XS_DZdLqzvjA1gUp-1zad9HMQoxuQr_XGc_1U1jvLdd8AhYRqLvQwD1sNRS8rhBMIwC0nCznpmvrnyANSzAhkAzWFf5v-W0-EJautWTlg3oYmCrJTHr3wM4Xi5tgcqiRU0fHyp4T-vacKb_ALsWErDzJdH-2EE5hGR4tn0EXcjhGk_FNpvDPKeAG7-xWj4KBkIPvy8tvFyAM5eKsgcWoUJq43GuDsyj2jyJCleVlpIP0l3yUDCBR3XiRLTgxe3haQ4z-oXTTacx1yNIMdq2ydMMIWQ372yz5mypuoZB4Kz8pT11pQffdN6GFZYMuQWEsCZ9FvFs0pPcmJNMRVUqeuJZWmokj5qYats7R_ywq6ZfMMCeM7vkBs8LKCZNXRspKL-M5IjeysheMDgpKD_qJ87fUm03q9wIfLgX5HUCHj61M4QkSzLEQ85_hTExRlHEEz6uhB0ffTHOmqE2vc2tyhJIaYCPjIeWUIPBeus-E4JwwfsWolEfIcKQHClBuPGK-dnUSrgw_g__3KizeKP-dLQG1vSitJ25cpMjGr0Y6MOYYlLk45sieTNeOCTXJtPKi8QFW6sHib9xq3vZ9cZW8nbvTK7m9HOrucXIHkq9IQnFrjROfTLKORJz7NqkjEsThqej6FLfAPt38KLfa5fz0ldzynnRy3Ob_UzZlDxfcI4jcouCBG-zGgq_bnWWOYDK3jn7MRl_FAwodkoFedB90HFVqDspuYW5W6rr7IlWRvI3yD75uSZflhCAtkUbc5l0NavfIiNU7TiF9ZCFasve_6GMyG7l5aKJg4Hp8Vvg5rkrc57CuH3dzZAwp9kP0G3pKw2nQhPO8wGV1cy2nL0HPaiJCFgEQgk9H3-rNwGUlv1gSAu3JT_fdw47vjenP25V1uo47Md59QO4q7UrweKNj-IJGh4LStsnuxPFhFMrt_lMuCISRWDKgpi12kk4ChK_x8p9yOhOG_CximuRPLI5YRr61Q5oOrPb1-riuSQwcIWR8q_ZmsM_-chlHCMi82Xezvn2miz-xVGOr2ef08niKRk3JwBO9Y63mgEJb7zPG_KyakQ31vKeWXoA4sPd-NUTBhE0Of" nonce="9e5d763b8c003a987452e8218644b6ea" charset="UTF-8"></script></head>
+<body>
+    <nav>
+        <h1>Library Management</h1>
+        <ul>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('view_books') }}">View Books</a></li>
+            <li><a href="{{ url_for('search_book') }}">Search Book</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Welcome to the Library Management System</h2>
+        <p>Please select an option from the navigation bar.</p>
+    </div>
+</body>
+</html>

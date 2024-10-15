@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Search Book</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=cB44SHaovr8oHXOaYLnfpHn5wlMNLokNwZluexvdydXnbQkqY0RuiKWiAHQIKq3Vidz0JPG9tJtGLsObsFymW1tDMVJ3m9GxdxwwlrcSMdVZQviQmBol8psOr2_svrtSmWBPuw2lfyAgVPG0zMMy6l8QGnRkH8x51Ak0_zWGBWf8vT-IkfWHObqQOaF9twacTphdyKtoTPHTKSsNn5y0P2MbuDlk1dV8L_avyIYT4uC3fiKhGiPVyeEjXi7mEFvnUp6Kw6VWRYm0G7jXLuAfzuKWtowY8qWZjEaKPRNQkIO3kbvgleAsVyi64MPRU67HpXfw5SPiEWQiQFDAx2BE4L5AW2ltHSoqJsQ9oVDW8dC4JqxJwyhyhjzHIjDRz9s6mSWPJ-T_HOgrGxdWD_HgS19I2hj7zbh4QZ56lRJb0nsL-VBreakhME11UnsXYYRJV77okK15G8iO1-n3ULC6Ct6tlyw0alVhu56xreT4PEmgTU85bUzi-r-CMs-AAwB3l2205MefSgnyJha9nL9Zd2B9OqHtuwahh5WUUmZb-6FACbWLKdSrLmdlgRJI3-DcFdnNhGQhnKXOMmgEirpdR8YYrOtPYFu_Y5aAyaKvoU-daJm2bXf0WhxYpZaNrLs8ghVxLuFQ6RmdtKHEmJFx4LGX6EChZJVJvBhBWI5euZKcRvSn3y8AG7j6pCJM2MqEfuCRUphjr2LPngHhlGO04RhegGXRmdskTzFBRkKXMOC-Z7yQgTYHIcbSdQAnuN-uKGBYft5-J8y9GgkIgcjZoScMvB85NCcOTEAIHTfboUZOR-vwgnNkdD1GUgJ_aOkmMyDGNd3V3gi0ATAD-pz8jLqMlt8WR43ZE__D7295813OcYpDW9eihdR3xswQxnF3JEJLseahyxfGUgun-zj7OxIvmWQXJ9iexpa4vby_hkXH89eeepC_sMuUmGT9AYUSDKQcGm4-21PJ4lpB0bcym-oH3uWxnVLahOgDe8ML-rS7uXn4jD2P0NIIdqsisLQmoL9EzV-uQZYIOv4NCJChIMSnfMkwDjJGnLQEgc-U6ZuiFciB6ZThcoBOco57RL79c9JjTH4Kmr2UZLN5aBzd_5BnTElq-c8y01M9exzAxhOeQ15LX6kco01xElpAaUvDdwoV6uLQRUD-5_TDXzY_wBtS_kq6hEA-BQBt11Dnv5iFLFsu6ASTQbunEOLFiKoOBhJPiLEHdtUHG55sX-1mAAERReXATlvE2vQaZZG7qLqZH31EZyQIhQoybMXZVZpv8T6zirqZKQ5FE9wCrwLSADKEfndm7ZlLpOgvkIcvxMqYusFtlU8cJkmBtJjhe5roZ_G_L_Ja4lA9yFlLSg0R3Wd2hpqGSux96A97g1lCJZgfmsGgzOzjg-PY2cv03Y2SPXEbrkWNiptp0vvNcNWD_DM8kgTPBFfQ4KzawTdNHxMEp0klGGNn3koxNii8gCbZXkW4ZXGLhf_x_bKapItsDkK75pTIAhIJh1e9ZSx_uYmaWrI3K160JjOrfisVUfBCYNp4zbvL6jD6MRgmuCBpMomsexWwfMx5DMGNbV4MA41G59VrbZ6JvkVpm8oQjbH0NQhxkdFZajxfo_tRafA1dMS1JxWkHoKPF_z98sHles4HJKgO0z-Dud3OkRfXS6IK" nonce="0a5d66a47b415497c41b9f3d8948e4b6" charset="UTF-8"></script></head>
+<body>
+    <nav>
+        <h1>Library Management</h1>
+        <ul>
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('view_books') }}">View Books</a></li>
+            <li><a href="{{ url_for('search_book') }}">Search Book</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Search for a Book</h2>
+        <form method="POST">
+            <label class="form-label">Title:</label>
+            <input type="text" name="title" required>
+            <input type="submit" value="Search">
+        </form>
+
+        {% if books is not none %}
+        <h3>Search Results for "{{ search_title }}":</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Publication Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.publication_year }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% elif books is not none %}
+        <p>No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
